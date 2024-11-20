@@ -4,6 +4,7 @@ import { Space_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
+import ThemeProvider from "@/context/theme";
 
 const inter = localFont({
   src: "./fonts/interVF.ttf",
@@ -31,11 +32,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable}  ${spaceGrotesk.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
