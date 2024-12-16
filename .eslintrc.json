@@ -33,6 +33,10 @@
           "caseInsensitive": true
         }
       }
+    ],
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/migration-from-tailwind-2": [
+      "error" // or "error" to enforce stricter checks
     ]
   },
   "ignorePatterns": ["components/ui/**"],
